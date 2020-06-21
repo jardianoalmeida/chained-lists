@@ -83,6 +83,9 @@
 		<Unit filename="C:/Users/Jardiano/CLionProjects/untitled2/main.cpp">
 			<Option target="untitled2"/>
 		</Unit>
+		<Unit filename="C:/Users/Jardiano/CLionProjects/untitled2/teste.cpp">
+			<Option target="untitled2"/>
+		</Unit>
 		<Unit filename="C:/Users/Jardiano/CLionProjects/untitled2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
