@@ -23,16 +23,18 @@ void mesclar(list<int> a, list<int> b) {
 
 bool estao_ordenadas(list<int> g) {
     list<int>::iterator it;
-    int vetor[g.size()];
+    int vetor[g.size()-1];
     int contador = 0;
     for (it = g.begin(); it != g.end(); ++it){
         // cout << ' ' << *it;
-        vetor[contador] == *it;;
+        vetor[contador] = *it;;
         contador++;
-    }
 
-    for (int i = 0; i <= contador; i++) {
-        cout << ' ' << vetor[i];
+    }
+//cout  << "vetor: " << vetor[0] << " -- " << vetor[1] << " -- " << vetor[2] << endl;
+    for (int i = 0; i <= g.size()-1; i++) {
+        /// cout << vetor[i] << "---";
+        ///cout << "Contador: " << contador;
         if (vetor[i - 1] > vetor[i]) {
             return false;
         }
@@ -53,36 +55,38 @@ int main() {
     list2.push_front(40);
     list2.push_front(2);
 
-    cout << "\nList 1 : ";
-    imprimir(list1);
-    cout << "\nList 2 : ";
-    imprimir(list2);
+    ///cout << "\nList 1 : ";
+    ///imprimir(list1);
+    ///cout << "\nList 2 : ";
+    ///imprimir(list2);
 
+    ///--> a) Verifique se as listas estão ordenadas;
     cout << "Listas sao ordenadas?" << endl;
-    cout << "Lista 1" << endl;
-    if (!estao_ordenadas(list1)) {
-        cout << "Não ordenado" << endl;
+    cout <<  "Lista 1: ";
+    if(!estao_ordenadas(list1)){
+        cout << "Não ordenado\n";
     } else {
-        cout << "Ordenado" << endl;
+        cout << "Ordenado\n";
     }
 
-    cout << "Lista 2" << endl;
-    if (!estao_ordenadas(list2)) {
-        cout << "Não ordenado" << endl;
+    cout <<  "Lista 2: ";
+    if(!estao_ordenadas(list2)){
+        cout << "Não ordenado\n";
     } else {
-        cout << "Ordenado" << endl;
+        cout << "Ordenado\n";
     }
 
 
+    ///--> b) Ordene as listas, caso não estejam ordenadas;
     cout << endl << "Ordena as listas: " << endl;
-    list1.sort();
-    list2.sort();
-    imprimir(list1);
-    imprimir(list2);
+    !estao_ordenadas(list1) ? list1.sort() : imprimir(list1);
+    !estao_ordenadas(list2) ? list1.sort() : imprimir(list2);
+    /// imprimir(list1);
+    /// imprimir(list2);
 
+    ///-> c) Mescle os elementos da segunda lista na primeira, mantendo a ordenação na lista final.
     cout << "Mesclar" << endl;
     mesclar(list1, list2);
-
 
     return 0;
 
